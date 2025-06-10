@@ -1,0 +1,87 @@
+.skinPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: var(--skin-panel-bg, #f7faff);
+  transition: background 0.3s;
+}
+
+.skinsGrid {
+  display: flex;
+  gap: 28px;
+  margin-top: 16px;
+}
+
+.skinItem {
+  padding: 18px 14px 14px 14px;
+  border: 3px solid #e0e0e0;
+  border-radius: 18px;
+  text-align: center;
+  width: 170px;
+  min-height: 210px;
+  background: #fff;
+  box-shadow: 0 4px 18px #0001;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.13s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skinItem.active {
+  border-color: #43e97b;
+  box-shadow: 0 0 0 3px #43e97b55;
+  transform: scale(1.04);
+}
+
+.skinItem h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.skinItem p {
+  margin: 4px 0;
+  font-size: 0.97rem;
+  color: #444;
+}
+
+.skinItem .skinColorPreview {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px auto 12px auto;
+  border: 2px solid #bbb;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.skinItem .skinPrice {
+  font-size: 0.95rem;
+  margin: 6px 0 10px 0;
+  color: #888;
+}
+
+.skinItem button {
+  margin-top: auto;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.skinItem button:disabled {
+  background: #e0e0e0;
+  color: #aaa;
+  cursor: not-allowed;
+}

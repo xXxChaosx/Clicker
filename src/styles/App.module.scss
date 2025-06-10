@@ -1,0 +1,32 @@
+$app-bg-light: #f0f0f0;
+$app-bg-dark: #20232a;
+$app-bg-neon: linear-gradient(135deg, #0f0c29, #302b63, #39ff14);
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Додає центрування по горизонталі
+  min-height: 100vh;
+}
+
+.click-upgrade-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.centered-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 32px;
+}

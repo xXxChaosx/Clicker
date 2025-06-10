@@ -1,0 +1,54 @@
+.upgradeContainer {
+  padding: 24px 32px;
+  background: var(--upgrade-panel-bg, #fff);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #1976d233, 0 1.5px 4px #1976d222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 270px;
+  gap: 16px;
+  color: var(--panel-text, #222);
+}
+
+.upgradeContainer h2 {
+  margin-bottom: 10px;
+  color: #1976d2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.upgradeButton {
+  width: 100%;
+  padding: 12px 0;
+  margin: 6px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  background: var(--upgrade-bg, linear-gradient(90deg, #43e97b 0%, #38f9d7 100%));
+  color: var(--upgrade-text, #222);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #38f9d722;
+  cursor: pointer;
+  transition: 
+    background 0.3s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  outline: none;
+}
+
+.upgradeButton:hover:not(:disabled) {
+  filter: brightness(1.08);
+  color: var(--upgrade-text, #fff);
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px #38f9d744;
+}
+
+.upgradeButton:disabled {
+  background: var(--upgrade-bg-disabled, #e0e0e0);
+  color: var(--upgrade-text-disabled, #aaa);
+  cursor: not-allowed;
+  box-shadow: none;
+}

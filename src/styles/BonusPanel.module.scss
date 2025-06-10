@@ -1,0 +1,236 @@
+/* BonusPanel.module.scss */
+.bonusContainer {
+  padding: 28px 20px;
+  border: none;
+  border-radius: 18px;
+  background: #f7faff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.highlight {
+    background-color: #e0f7fa; /* Light cyan background for highlight */
+    border-color: #80deea; /* Cyan border for highlight */
+  }
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.bonusContainer h2,
+.bonusContainer h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.bonusContainer h2 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.casesGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+  margin-bottom: 28px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.caseButton {
+  padding: 15px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .caseDescription {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-top: 8px;
+    color: #eee;
+  }
+
+  .openingAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    animation: pulse 0.5s infinite alternate;
+    border-radius: 8px;
+  }
+}
+
+.caseButtonIcon {
+  font-size: 38px;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.rewardNotification {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  white-space: nowrap;
+
+  span {
+    font-style: italic;
+  }
+}
+
+.wheelContainer {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 18px auto;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #1976d2;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.wheelSegment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+  left: 0;
+  top: 0;
+}
+
+.wheelPointer {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 22px solid #1976d2;
+  z-index: 10;
+}
+
+.wheelRewards {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.wheelRewards ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wheelRewards li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.spinButton {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover {
+    background: linear-gradient(90deg, #11998e 0%, #38f9d7 100%);
+    transform: scale(1.04);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.message {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 1rem;
+  text-align: center;
+  color: #1976d2;
+  background-color: #e3f2fd;
+  border: 1px solid #b3e5fc;
+}
+
+.rewardAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(76, 175, 80, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  animation: pulse 0.5s infinite alternate;
+  border-radius: 8px;
+}

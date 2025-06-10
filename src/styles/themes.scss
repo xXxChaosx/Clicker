@@ -1,0 +1,50 @@
+.theme-light {
+  --bg: #f0f0f0;
+  --text: #000;
+  --upgrade-bg: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  --upgrade-bg-disabled: #e0e0e0;
+  --upgrade-text: #222;
+  --upgrade-text-disabled: #aaa;
+  --upgrade-panel-bg: #fff;
+  --stats-bg: #fff;
+  --skin-panel-bg: #f7faff;
+  --panel-text: #222;
+}
+
+.theme-dark {
+  --bg: #20232a;
+  --text: #fff;
+  --upgrade-bg: linear-gradient(90deg, #232526 0%, #414345 100%);
+  --upgrade-bg-disabled: #444;
+  --upgrade-text: #fff;
+  --upgrade-text-disabled: #888;
+  --upgrade-panel-bg: #232526;
+  --stats-bg: #232526;
+  --skin-panel-bg: #232526;
+  --panel-text: #fff;
+}
+
+.theme-neon {
+  --bg: linear-gradient(135deg, #0f0c29, #302b63, #39ff14);
+  --text: #39ff14;
+}
+
+.theme-lightbrown {
+  --bg: #e9cba7;
+  --text: #5d432c;
+  --upgrade-bg: linear-gradient(90deg, #c2b280 0%, #e9cba7 100%);
+  --upgrade-bg-disabled: #d8c3a5;
+  --upgrade-text: #5d432c;
+  --upgrade-text-disabled: #bfa980;
+  --upgrade-panel-bg: #f7e7ce;
+  --stats-bg: #f7e7ce;
+  --skin-panel-bg: #f3e3c3;
+  --panel-text: #5d432c;
+}
+
+body, html {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}

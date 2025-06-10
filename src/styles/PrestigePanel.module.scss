@@ -1,0 +1,15 @@
+.prestigeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  color: var(--panel-text, #222);
+}
+
+.prestigeContainer button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
