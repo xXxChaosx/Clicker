@@ -21,7 +21,7 @@ export const useClicker = () => {
   const [passiveIncomeValue, setPassiveIncomeValue] = useState(0); // Пасивний дохід
   const [multiplier, setMultiplier] = useState(1);
   const [doubleCaseChance, setDoubleCaseChance] = useState(0); // Шанс на подвійний кейс
-  const [skins, setSkins] = useState(['light', 'dark', 'neon']);
+  const [skins, setSkins] = useState(['light']);
   const [currentSkin, setCurrentSkin] = useState('light'); // Початковий скін
 
   // Антибонуси
@@ -42,7 +42,7 @@ export const useClicker = () => {
           setPassiveIncomeValue(data.passiveIncomeValue ?? 0);
           setMultiplier(data.multiplier ?? 1);
           setDoubleCaseChance(data.doubleCaseChance ?? 0);
-          setSkins(data.skins ?? ['light', 'dark', 'neon']);
+          setSkins(data.skins ?? ['light']);
           setCurrentSkin(data.currentSkin ?? 'light');
         }
         setLoading(false);
@@ -63,16 +63,6 @@ export const useClicker = () => {
     return () => clearInterval(passiveInterval);
   }, [passiveIncomeValue, duiktCoins, antibonus]);
 
-  // // Антибонуси — викликаються кожні 10 хвилин
-  // useEffect(() => {
-  //   const antibonusInterval = setInterval(() => {
-  //     const types = ['freeze', 'negativeClick', 'loseCredits'];
-  //     const randomType = types[Math.floor(Math.random() * types.length)];
-  //     triggerAntibonus(randomType);
-  //   }, 10 * 60 * 1000); // 10 хвилин
-
-  //   return () => clearInterval(antibonusInterval);
-  // }, []);
 
   const triggerAntibonus = (type) => {
     playSound(antibonusSound);
@@ -159,7 +149,6 @@ export const useClicker = () => {
     }
   };
 
-  // Очищення таймера при зміні антибонуса
   useEffect(() => {
     return () => {
       if (antibonusTimerRef.current) clearInterval(antibonusTimerRef.current);
@@ -259,7 +248,6 @@ export const useClicker = () => {
   setCurrentSkin(skinId);
 };
 
-  // Додайте цю функцію всередині useClicker:
   const addCredits = (amount) => {
     setCredits((prev) => prev + amount);
   };
@@ -277,7 +265,6 @@ export const useClicker = () => {
     setPassiveIncomeValue(0);
     setMultiplier(1);
     setDoubleCaseChance(0);
-    // Можна залишити скіни та поточний скин, якщо це потрібно
   };
 
   // Збереження гри при зміні стану
@@ -309,7 +296,7 @@ export const useClicker = () => {
     credits,
     duiktCoins,
     clickValue: clickValue + prestigeClickBonus,
-    setClickValue, // ДОДАЙТЕ ЦЕ
+    setClickValue,
     passiveIncomeValue,
     multiplier: multiplier + prestigeMultiplierBonus,
     doubleCaseChance,

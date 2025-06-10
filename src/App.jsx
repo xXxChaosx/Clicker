@@ -13,7 +13,6 @@ import AntibonusPopup from './components/AntibonusPopup';
 import './styles/App.module.scss';
 
 const AUTO_SAVE_INTERVAL = 60;
-// const ANTI_BONUS_INTERVAL = 600;
 
 const antiBonusOptions = [
   'freeze',
@@ -47,10 +46,6 @@ const App = () => {
   } = useClicker();
 
   const [saveTimer, setSaveTimer] = useState(AUTO_SAVE_INTERVAL);
-  // const [antiBonusTimer, setAntiBonusTimer] = useState(ANTI_BОНУС_INTERVAL);
-  // const [nextAntiBonus, setNextAntiBonus] = useState(
-  //   antiBonusOptions[Math.floor(Math.random() * antiBonusOptions.length)]
-  // );
 
   const timerRef = useRef();
   const antiBonusRef = useRef();
@@ -67,7 +62,6 @@ const App = () => {
     currentSkin
   };
 
-  // Автозбереження запускається лише один раз після завантаження
   useEffect(() => {
     if (!loading) {
       timerRef.current = setInterval(() => {
@@ -84,26 +78,6 @@ const App = () => {
     return () => clearInterval(timerRef.current);
   }, [loading]);
 
-  // Антибонус таймер
-  // useEffect(() => {
-  //   if (!loading) {
-  //     antiBonusRef.current = setInterval(() => {
-  //       setAntiBonusTimer((t) => {
-  //         if (t <= 1) {
-  //           triggerAntibonus(nextAntiBonus);
-  //           // Випадково обираємо наступний антибонус
-  //           const newAntiBonus = antiBonusOptions[Math.floor(Math.random() * antiBonusOptions.length)];
-  //           setNextAntiBonus(newAntiBonus);
-  //           return ANTI_BОНУС_INTERVAL;
-  //         }
-  //         return t - 1;
-  //       });
-  //     }, 1000);
-  //   }
-
-  //   return () => clearInterval(antiBonusRef.current);
-  // }, [loading, nextAntiBonus, triggerAntibonus]);
-
   const handleSaveNow = async () => {
     await saveGame(saveState);
     setSaveTimer(AUTO_SAVE_INTERVAL);
@@ -117,7 +91,7 @@ const App = () => {
 
   // Додаємо клас теми до body
   useEffect(() => {
-    document.body.classList.remove('theme-light', 'theme-dark', 'theme-neon', 'theme-lightbrown');
+    document.body.classList.remove('theme-light', 'theme-dark', 'theme-lightbrown');
     document.body.classList.add(`theme-${currentSkin}`);
   }, [currentSkin]);
 

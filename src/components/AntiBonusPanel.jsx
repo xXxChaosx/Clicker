@@ -4,9 +4,6 @@ import styles from '../styles/AntiBonusPanel.module.scss';
 const AntiBonusPanel = ({
   antibonus,
   isClickFrozen,
-  // antiBonusTimer,
-  // nextAntiBonus,
-  // antibonusTimeLeft
 }) => {
   const getAntibonusMessage = () => {
     switch (antibonus) {
@@ -26,15 +23,6 @@ const AntiBonusPanel = ({
       <h2>Антибонуси</h2>
       <p>{getAntibonusMessage()}</p>
       {isClickFrozen && <p style={{ color: 'red' }}>⚠️ Кліки заблоковані!</p>}
-
-      {/* <div className="anti-bonus-panel">
-        <h3>Наступний антибонус</h3>
-        <div className="anti-bonus-info">
-          <span>Через: <span style={{ color: 'red' }}>{antiBonusTimer}</span> сек</span>
-          <br />
-          <span>Тип: <span style={{ color: 'red' }}>{nextAntiBonus}</span></span>
-        </div>
-      </div> */}
     </div>
   );
 };
