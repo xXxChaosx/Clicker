@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "echo '--- Vercel Build Started ---' && react-scripts build && echo '--- Vercel Build Finished Successfully ---'"
   },
   "engines": {
     "node": "22.x"
