@@ -2,16 +2,19 @@
   "name": "duikt-clicker-game",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://xXChaosx.github.io/Clicker",
   "dependencies": {
+    "framer-motion": "^6.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
-    "framer-motion": "^6.0.0",
     "sass": "^1.32.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -24,5 +27,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
