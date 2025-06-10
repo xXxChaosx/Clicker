@@ -153,6 +153,7 @@
   transform-origin: 100% 100%;
   left: 0;
   top: 0;
+  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
 }
 
 .wheelPointer {
