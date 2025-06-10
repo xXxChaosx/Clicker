@@ -1,14 +1,10 @@
 /* BonusPanel.module.scss */
 .bonusContainer {
-  padding: 28px 20px;
-  border: none;
-  border-radius: 18px;
-  background: #f7faff;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 
   &.highlight {
     background-color: #e0f7fa; /* Light cyan background for highlight */
@@ -26,23 +22,11 @@
   margin-bottom: 15px;
 }
 
-.bonusContainer h2 {
-  text-align: center;
-  color: #1976d2;
-  margin-bottom: 18px;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
 .casesGrid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  gap: 18px;
-  margin-bottom: 28px;
-  width: 100%;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .caseButton {
@@ -96,12 +80,6 @@
   }
 }
 
-.caseButtonIcon {
-  font-size: 38px;
-  margin-bottom: 4px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -133,14 +111,14 @@
   position: relative;
   width: 220px;
   height: 220px;
-  margin: 0 auto 18px auto;
+  margin: 0 auto;
 }
 
 .wheel {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 5px solid #1976d2;
+  border: 4px solid #333;
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -153,19 +131,18 @@
   transform-origin: 100% 100%;
   left: 0;
   top: 0;
-  clip-path: polygon(100% 100%, 0% 0%, 100% 0%);
 }
 
 .wheelPointer {
   position: absolute;
-  top: -22px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 16px solid transparent;
-  border-right: 16px solid transparent;
-  border-top: 22px solid #1976d2;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid red;
   z-index: 10;
 }
 
@@ -186,20 +163,19 @@
 }
 
 .spinButton {
-  padding: 12px 28px;
-  font-size: 1.1rem;
+  padding: 10px 20px;
+  font-size: 1rem;
   font-weight: bold;
-  color: #fff;
-  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  background-color: #007bff;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.2s, transform 0.1s;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 
   &:hover {
-    background: linear-gradient(90deg, #11998e 0%, #38f9d7 100%);
-    transform: scale(1.04);
+    background-color: #0056b3;
   }
 
   &:disabled {
@@ -209,14 +185,14 @@
 }
 
 .message {
-  margin-top: 18px;
-  padding: 12px;
-  border-radius: 7px;
-  font-size: 1rem;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
   text-align: center;
-  color: #1976d2;
-  background-color: #e3f2fd;
-  border: 1px solid #b3e5fc;
+  color: #555;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
 }
 
 .rewardAnimation {
